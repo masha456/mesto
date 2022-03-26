@@ -1,0 +1,18 @@
+.profile__edit-button {
+    width: 24px;
+    height: 24px;
+    margin-top: 37px;
+    background-image: url(../../../images/кнопка-профайл.svg);
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    display: inline-block;
+    transition: .2s;
+    outline: none;
+  }
+  
+  .profile__edit-button:hover {
+    opacity: .6;
+    cursor: pointer;
+  }

@@ -1,0 +1,19 @@
+.profile__add-button {
+  width: 150px;
+  height: 50px;
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-color: transparent;
+  background-image: url(../../../images/плюсик.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: .2s;
+  outline: none;
+
+}
+
+.profile__add-button:hover {
+    opacity: .6;
+    cursor: pointer;
+  }
