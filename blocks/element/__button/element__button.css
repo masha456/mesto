@@ -1,0 +1,17 @@
+.element__button {
+  width: 22px;
+  height: 19px;
+  background-image: url(../../../images/сердечко.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+  transition: .2s;
+  outline: none;
+  margin-right: 20px;
+}
+
+.element__button:hover {
+    opacity: .6;
+    cursor: pointer;
+  }

@@ -16,59 +16,73 @@
         <main class="content">
            <section class="profile">
                <img class="profile__image" src="./images/жак-кусто.jpg" alt="Аватар">
-               <div>
+               <div class="profile__descriptions">
+               <div class="profile__description">
                  <h1 class="profile__title">Жак-Ив Кусто</h1>
-                 <p class="profile__subtitle">Исследователь океана</p>
+                 <button type="button" class="profile__edit-button"></button>
                </div>
-               <button type="button" class="profile__edit-button"></button>
+               <p class="profile__subtitle">Исследователь океана</p>
+              </div>
                <button type="button" class="profile__add-button"></button>
            </section>
 
            <section class="elements">
               <div class="element">
                 <img class="element__image" src="/images/карачаевск.jpg">
-                <h2 class="element__title">Карачаевск</h2>
-                <button type="button" class="element__button"></button>
+                  <div class="element__info">
+                    <h2 class="element__title">Карачаевск</h2>
+                    <button type="button" class="element__button"></button>
+                  </div>
               </div>
               <div class="element">
                 <img class="element__image" src="/images/эльбрус.jpg">
-                <h2 class="element__title">Гора Эльбрус</h2>
-                <button type="button" class="element__button"></button>
-             </div>
-             <div class="element">
+                  <div class="element__info">
+                    <h2 class="element__title">Гора Эльбрус</h2>
+                    <button type="button" class="element__button"></button>
+                  </div>
+              </div>
+              <div class="element">
                 <img class="element__image" src="/images/домбай.jpg">
-                <h2 class="element__title">Домбай</h2>
-                <button type="button" class="element__button"></button>
+                  <div class="element__info">
+                    <h2 class="element__title">Домбай</h2>
+                    <button type="button" class="element__button"></button>
+                  </div>
               </div>
               <div class="element">
                 <img class="element__image" src="/images/эльбрус.jpg">
-                <h2 class="element__title">Гора Эльбрус</h2>
-                <button type="button" class="element__button"></button>
+                  <div class="element__info">
+                    <h2 class="element__title">Гора Эльбрус</h2>
+                    <button type="button" class="element__button"></button>
+                  </div>
               </div>
               <div class="element">
                 <img class="element__image" src="/images/домбай.jpg">
-                <h2 class="element__title">Домбай</h2>
-                <button type="button" class="element__button"></button>
+                  <div class="element__info">
+                    <h2 class="element__title">Домбай</h2>
+                    <button type="button" class="element__button"></button>
+                  </div>
               </div>
               <div class="element">
                 <img class="element__image" src="/images/карачаевск.jpg">
-                <h2 class="element__title">Карачаево-Ч...</h2>
-                <button type="button" class="element__button"></button>
+                  <div class="element__info">
+                    <h2 class="element__title">Карачаево-Ч...</h2>
+                    <button type="button" class="element__button"></button>
+                  </div>
               </div>
            </section>
         </main>
 
            <section class="footer">
-              <p class="footer__copyright">© 2022. Топалова Мария</p>
+              <p class="footer__copyright">© 2022 Mesto Russia</p>
            </section>
 
            <div class="popup popup_is-active">
                <div class="popup__content">
                    <button class="popup__close" type="button"></button>
                    <h3 class="popup__title">Редактировать профиль</h3>
-                   <p class="popup__subtitle">Имя</p>
-                   <p class="popup__subtitle">Описание</p>
-                   <button class="popup__save" type="button">Сохранить</button>
+                   <input name="name" type="text" class="popup__subtitle" required minlength="2" maxlength="40"></p>
+                   <input name="job" type="text" class="popup__subtitle" required minlength="2" maxlength="200"></p>
+                   <button class="popup__save" type="submit">Сохранить</button>
                </div>
             </div>
     </div>
