@@ -1,3 +1,4 @@
 .popup_is-active {
-  
+   display: block;
+   background: rgba(0, 0, 0, 0.5);
 }

@@ -2,8 +2,10 @@ const profileEditButton = document.querySelector('.profile__edit-button');
 const modalWindow = document.querySelector('.popup');
 const modaCloseBtn = modalWindow.querySelector('.popup__close');
 
-function openModalWindow() {
-    modalWindow.classList.add('popup_is-active');
+function toggleModalWindow() {
+    modalWindow.classList.toggle('popup_is-active');
 }
 
-profileEditButton.addEventListener('click', openModalWindow);
+profileEditButton.addEventListener('click', toggleModalWindow);
+modaCloseBtn.addEventListener('click', toggleModalWindow);
+
