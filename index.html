@@ -15,60 +15,60 @@
   
         <main class="content">
            <section class="profile">
-               <img class="profile__image" src="./images/жак-кусто.jpg" alt="Аватар">
-               <div class="profile__descriptions">
+               <img class="profile__image" src="./images/profile-image.jpg" alt="Аватарка">
+               <div class="profile__block">
                <div class="profile__description">
-                 <h1 class="profile__title">Жак-Ив Кусто</h1>
-                 <button type="button" class="profile__edit-button"></button>
+                 <h1 class="profile__name">Жак-Ив Кусто</h1>
+                 <button type="button" class="profile__edit-button" aria-label="Изменить"></button>
                </div>
                <p class="profile__subtitle">Исследователь океана</p>
               </div>
-               <button type="button" class="profile__add-button"></button>
+               <button type="button" class="profile__add-button" aria-label="Добавить"></button>
            </section>
 
            <section class="elements">
-              <div class="element">
-                <img class="element__image" src="/images/карачаевск.jpg">
-                  <div class="element__info">
+              <ul class="element">
+                  <li class="element__info">
+                    <img class="element__image" src="/images/element-image-karachaevsk.jpg">
                     <h2 class="element__title">Карачаевск</h2>
-                    <button type="button" class="element__button"></button>
-                  </div>
-              </div>
-              <div class="element">
-                <img class="element__image" src="/images/эльбрус.jpg">
-                  <div class="element__info">
+                    <button type="button" class="element__button" aria-label="Понравилось"></button>
+                  </li>
+              </ul>
+              <ul class="element">
+                  <li class="element__info">
+                    <img class="element__image" src="/images/element-image-elbrus.jpg">
                     <h2 class="element__title">Гора Эльбрус</h2>
-                    <button type="button" class="element__button"></button>
-                  </div>
-              </div>
-              <div class="element">
-                <img class="element__image" src="/images/домбай.jpg">
-                  <div class="element__info">
+                    <button type="button" class="element__button" aria-label="Понравилось"></button>
+                  </li>
+              </ul>
+              <ul class="element">
+                  <li class="element__info">
+                    <img class="element__image" src="/images/element-image-dombai.jpg">
                     <h2 class="element__title">Домбай</h2>
-                    <button type="button" class="element__button"></button>
-                  </div>
-              </div>
-              <div class="element">
-                <img class="element__image" src="/images/эльбрус.jpg">
-                  <div class="element__info">
+                    <button type="button" class="element__button" aria-label="Понравилось"></button>
+                  </li>
+              </ul>
+              <ul class="element">
+                  <li class="element__info">
+                    <img class="element__image" src="/images/element-image-elbrus.jpg">
                     <h2 class="element__title">Гора Эльбрус</h2>
-                    <button type="button" class="element__button"></button>
-                  </div>
-              </div>
-              <div class="element">
-                <img class="element__image" src="/images/домбай.jpg">
-                  <div class="element__info">
+                    <button type="button" class="element__button" aria-label="Понравилось"></button>
+                  </li>
+              </ul>
+              <ul class="element">
+                  <li class="element__info">
+                    <img class="element__image" src="/images/element-image-dombai.jpg">
                     <h2 class="element__title">Домбай</h2>
-                    <button type="button" class="element__button"></button>
-                  </div>
-              </div>
-              <div class="element">
-                <img class="element__image" src="/images/карачаевск.jpg">
-                  <div class="element__info">
-                    <h2 class="element__title">Карачаево-Ч...</h2>
-                    <button type="button" class="element__button"></button>
-                  </div>
-              </div>
+                    <button type="button" class="element__button" aria-label="Понравилось"></button>
+                  </li>
+              </ul>
+              <ul class="element">
+                  <li class="element__info">
+                    <img class="element__image" src="/images/element-image-karachaevsk.jpg">
+                    <h2 class="element__title">Карачаево-Черкесия</h2>
+                    <button type="button" class="element__button" aria-label="Понравилось"></button>
+                  </li>
+              </ul>
            </section>
         </main>
 
@@ -77,18 +77,20 @@
            </section>
 
            <div class="popup">
-               <div class="popup__content">
+               <div class="popup__container">
                    <button class="popup__close" type="button"></button>
-                   <h3 class="popup__title">Редактировать профиль</h3>
-                   <form class="form">
-                   <input name="name" type="text" class="popup__subtitle" required minlength="2" maxlength="40" placeholder="Введите имя"></p>
-                   <input name="job" type="text" class="popup__subtitle-about" required minlength="2" maxlength="200" placeholder="О себе"></p>
-                   <button class="popup__save" type="submit">Сохранить</button>
-                  </form>
-                  
+                   <form class="popup__form">
+                     <h3 class="popup__title">Редактировать профиль</h3>
+                     <input name="name" class="popup__subtitle popup__subtitle_name" required minlength="2" maxlength="40" placeholder="Введите имя">
+                     <span class="popup__error popup__error_name"></span>
+                     <input name="job" class="popup__subtitle popup__subtitle_job" required minlength="2" maxlength="200" placeholder="О себе">
+                     <span class="popup__error popup__error_job"></span>
+                     <button class="popup__save" type="submit" aria-label="Сохранить">Сохранить</button>
+                  </form>  
                </div>
            </div>
     </div>
+
     <script src="scripts/index.js"></script>
 </body>
 </html>

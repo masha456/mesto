@@ -1,7 +1,7 @@
 .profile__edit-button {
     width: 24px;
     height: 25px;
-    background-image: url(../../../images/кнопка-профайл.svg);
+    background-image: url(../../../images/profile-edit-button.svg);
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -19,6 +19,6 @@
   @media screen and (max-width: 450px) {
     .profile__edit-button {
       width: 18px;
-      height: 18px;
+      height: 19px;
   }
 }

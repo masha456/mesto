@@ -1,6 +1,19 @@
 .popup__subtitle {
-    width: 354px;
+    max-width: 354px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    margin-bottom: 19px;
+    outline-color: #357eeb;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    padding-bottom: 8px;
 }
+
+@media screen and (max-width: 550px) {
+    .popup__subtitle {
+      max-width: 238px;
+      
+    }
+  }

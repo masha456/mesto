@@ -1,17 +1,19 @@
 .element__button {
   width: 22px;
   height: 19px;
-  background-image: url(../../../images/сердечко.png);
+  background-image: url(../../../images/element-heart.svg);
   background-position: center;
   background-repeat: no-repeat;
   border: none;
   background-color: transparent;
   transition: .2s;
   outline: none;
+  align-self: flex-end;
   margin-right: 20px;
+  margin-bottom: 5px;
 }
 
 .element__button:hover {
-    opacity: .6;
+    opacity: .5;
     cursor: pointer;
   }
