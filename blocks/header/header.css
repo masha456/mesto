@@ -3,14 +3,14 @@
     margin: 0 auto;
     padding-top: 45px;
     padding-bottom: 37px;
-    border-bottom: 1px solid #545454;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
-@media screen and (max-width: 950px) {
-    .header {
-    margin-left: 27px;
-    }
+@media screen and (max-width: 960px) {
+  .header {
+    margin: 0;
   }
+}
 
   @media screen and (max-width: 450px) {
     .header {

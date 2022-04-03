@@ -1,9 +1,0 @@
-.popup__error_job {
-    margin-bottom: 48px;
-}
-
-@media screen and (max-width: 550px) {
-    .popup__error_job {
-      margin-bottom: 45px;
-    }
-  }

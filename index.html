@@ -27,48 +27,50 @@
            </section>
 
            <section class="elements">
-              <ul class="element">
-                  <li class="element__info">
+             <ul class="elements__item">
+              <li class="element">
+                  <div class="element__info">
                     <img class="element__image" src="./images/element-image-karachaevsk.jpg" alt="Старый храм">
                     <h2 class="element__title">Карачаевск</h2>
                     <button type="button" class="element__button" aria-label="Понравилось"></button>
-                  </li>
-              </ul>
-              <ul class="element">
-                  <li class="element__info">
+                  </div>
+              </li>
+              <li class="element">
+                  <div class="element__info">
                     <img class="element__image" src="./images/element-image-elbrus.jpg" alt="Гора">
                     <h2 class="element__title">Гора Эльбрус</h2>
                     <button type="button" class="element__button" aria-label="Понравилось"></button>
-                  </li>
-              </ul>
-              <ul class="element">
-                  <li class="element__info">
+                  </div>
+              </li>
+              <li class="element">
+                  <div class="element__info">
                     <img class="element__image" src="./images/element-image-dombai.jpg" alt="Горы">
                     <h2 class="element__title">Домбай</h2>
                     <button type="button" class="element__button" aria-label="Понравилось"></button>
-                  </li>
-              </ul>
-              <ul class="element">
-                  <li class="element__info">
+                  </div>
+              </li>
+              <li class="element">
+                  <div class="element__info">
                     <img class="element__image" src="./images/element-image-elbrus.jpg" alt="Гора">
                     <h2 class="element__title">Гора Эльбрус</h2>
                     <button type="button" class="element__button" aria-label="Понравилось"></button>
-                  </li>
-              </ul>
-              <ul class="element">
-                  <li class="element__info">
+                  </div>
+              </li>
+              <li class="element">
+                  <div class="element__info">
                     <img class="element__image" src="./images/element-image-dombai.jpg" alt="Горы">
                     <h2 class="element__title">Домбай</h2>
                     <button type="button" class="element__button" aria-label="Понравилось"></button>
-                  </li>
-              </ul>
-              <ul class="element">
-                  <li class="element__info">
+                  </div>
+              </li>
+              <li class="element">
+                  <div class="element__info">
                     <img class="element__image" src="./images/element-image-karachaevsk.jpg" alt="Старый храм">
                     <h2 class="element__title">Карачаево-Черкесия</h2>
                     <button type="button" class="element__button" aria-label="Понравилось"></button>
-                  </li>
-              </ul>
+                  </div>
+              </li>
+             </ul>
            </section>
         </main>
 
@@ -79,12 +81,10 @@
            <div class="popup">
                <div class="popup__container">
                    <button class="popup__close" type="button"></button>
-                   <form class="popup__form">
+                   <form class="popup__form" name="form-popup">
                      <h3 class="popup__title">Редактировать профиль</h3>
-                     <input name="name" class="popup__subtitle popup__subtitle_name" required minlength="2" maxlength="40" placeholder="Введите имя">
-                     <span class="popup__error popup__error_name"></span>
-                     <input name="job" class="popup__subtitle popup__subtitle_job" required minlength="2" maxlength="200" placeholder="О себе">
-                     <span class="popup__error popup__error_job"></span>
+                     <input name="name" class="popup__input popup__input_name" required minlength="2" maxlength="30" placeholder="Введите имя">
+                     <input name="job" class="popup__input popup__input_job" required minlength="2" maxlength="200" placeholder="О себе">
                      <button class="popup__save" type="submit" aria-label="Сохранить">Сохранить</button>
                   </form>  
                </div>
