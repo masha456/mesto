@@ -4,8 +4,8 @@ const openProfileButton = document.querySelector('.profile__edit-button');
 const formPopup = document.querySelector('.popup__form');
 const profileName = document.querySelector('.profile__name');
 const profileSubtitle = document.querySelector('.profile__subtitle');
-const popupName = formPopup.querySelector('.popup__input_name');
-const popupJob = formPopup.querySelector('.popup__input_job');
+const popupName = formPopup.querySelector('.popup__input_type_name');
+const popupJob = formPopup.querySelector('.popup__input_type_job');
 const profilePopupOpened = 'popup_is-active';
 
 function openPopup () {

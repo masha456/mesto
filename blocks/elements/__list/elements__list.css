@@ -1,4 +1,4 @@
-.elements__item {
+.elements__list {
     max-width: 880px;
     margin: 0 auto;
     padding: 0;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 950px) {
-    .elements__item {
+    .elements__list {
       margin: 0 19px;
   }
   }
