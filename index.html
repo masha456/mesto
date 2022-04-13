@@ -27,61 +27,18 @@
            </section>
 
            <section class="elements">
-             <ul class="elements__list">
-              <li class="element">
-                  <div class="element__info">
-                    <img class="element__image" src="./images/element-image-karachaevsk.jpg" alt="Старый храм">
-                    <h2 class="element__title">Карачаевск</h2>
-                    <button type="button" class="element__button" aria-label="Понравилось"></button>
-                  </div>
-              </li>
-              <li class="element">
-                  <div class="element__info">
-                    <img class="element__image" src="./images/element-image-elbrus.jpg" alt="Гора">
-                    <h2 class="element__title">Гора Эльбрус</h2>
-                    <button type="button" class="element__button" aria-label="Понравилось"></button>
-                  </div>
-              </li>
-              <li class="element">
-                  <div class="element__info">
-                    <img class="element__image" src="./images/element-image-dombai.jpg" alt="Горы">
-                    <h2 class="element__title">Домбай</h2>
-                    <button type="button" class="element__button" aria-label="Понравилось"></button>
-                  </div>
-              </li>
-              <li class="element">
-                  <div class="element__info">
-                    <img class="element__image" src="./images/element-image-elbrus.jpg" alt="Гора">
-                    <h2 class="element__title">Гора Эльбрус</h2>
-                    <button type="button" class="element__button" aria-label="Понравилось"></button>
-                  </div>
-              </li>
-              <li class="element">
-                  <div class="element__info">
-                    <img class="element__image" src="./images/element-image-dombai.jpg" alt="Горы">
-                    <h2 class="element__title">Домбай</h2>
-                    <button type="button" class="element__button" aria-label="Понравилось"></button>
-                  </div>
-              </li>
-              <li class="element">
-                  <div class="element__info">
-                    <img class="element__image" src="./images/element-image-karachaevsk.jpg" alt="Старый храм">
-                    <h2 class="element__title">Карачаево-Черкесия</h2>
-                    <button type="button" class="element__button" aria-label="Понравилось"></button>
-                  </div>
-              </li>
-             </ul>
            </section>
         </main>
 
            <section class="footer">
               <p class="footer__copyright">© 2022 Mesto Russia</p>
            </section>
+    </div>
 
-           <div class="popup">
+           <div class="popup popup_type_edit-button">
                <div class="popup__container">
-                   <button class="popup__close" type="button"></button>
-                   <form class="popup__form" name="form-popup">
+                   <button class="popup__close popup__close_type_edit-button" type="button"></button>
+                   <form class="popup__form popup__form_type_edit-button" name="form-popup">
                      <h3 class="popup__title">Редактировать профиль</h3>
                      <input name="name" class="popup__input popup__input_type_name" required minlength="2" maxlength="30" placeholder="Введите имя">
                      <input name="job" class="popup__input popup__input_type_job" required minlength="2" maxlength="200" placeholder="О себе">
@@ -89,8 +46,38 @@
                   </form>  
                </div>
            </div>
-    </div>
 
+           <div class="popup popup_type_add-button">
+            <div class="popup__container">
+              <button class="popup__close popup__close_type_add-button" type="button"></button>
+                <form class="popup__form popup__form_type_add-button" name="form-popup">
+                  <h3 class="popup__title">Новое место</h3>
+                  <input name="name" class="popup__input popup__input_type_card-name" required minlength="2" maxlength="30" placeholder="Название">
+                  <input name="link" class="popup__input popup__input_type_link" required minlength="2" maxlength="200" placeholder="Ссылка на картинку">
+                  <button class="popup__save" type="submit" aria-label="Создать">Создать</button>
+               </form>  
+            </div>
+           </div>
+
+           <div class="popup popup_type_image">
+             <div class="popup__container popup__container_image">
+               <button class="popup__close popup__close_type_image"></button>
+               <div class="popup__form">
+                 <img class="popup__image">
+                 <p class="popup__text"></p>
+               </div>
+             </div>
+           </div>
+
+           <template id="element">
+             <div class="element__info">
+               <img class="element__image" alt="картинка">
+               <h2 class="element__title"></h2>
+               <button type="button" class="element__button" aria-label="Понравилось"></button>
+               <button type="button" class="element__button-trash" aria-label="Удалить"></button>
+              </div>
+           </template>
+    
     <script src="scripts/index.js"></script>
 </body>
 </html>
