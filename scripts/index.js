@@ -54,8 +54,13 @@ const initialCards = [
   ];
 
 //открытие
-function openPopup(pop) {
-  pop.classList.add(profilePopupOpened)
+function openPopup(popup) {
+  popup.classList.add(profilePopupOpened)
+}
+
+function openPopupImage(popup) {
+  openPopup(popupOpenImage)
+  popup.classList.add(popupOpenImageWindow)
 }
 
 profileEditButton.addEventListener('click', function() {
@@ -70,8 +75,8 @@ profileAddButton.addEventListener('click', function() {
 
 
 //закрытие
-function closePopup(pop) {
-  pop.classList.remove(profilePopupOpened)
+function closePopup(popup) {
+  popup.classList.remove(profilePopupOpened)
 }
 
 popupCloseEditButton.addEventListener('click', function() {
@@ -114,8 +119,7 @@ function createCard(inputName, inputLink) {
   })
 
   elementImage.addEventListener('click', function() {
-    popupOpenImage.classList.add(profilePopupOpened)
-    popupOpenImage.classList.add(popupOpenImageWindow)
+    openPopupImage(popupOpenImage)
     popupImage.src = inputLink;
     popupImage.alt = inputName;
     popupText.textContent = inputName;
