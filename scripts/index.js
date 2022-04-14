@@ -1,4 +1,5 @@
 const profilePopupOpened = 'popup_is-active';
+const popupOpenImageWindow = 'popup_is-open-image';
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileAddButton = document.querySelector('.profile__add-button');
 const profileName = document.querySelector('.profile__name');
@@ -10,7 +11,7 @@ const popupEditButton = document.querySelector('.popup_type_edit-button');
 const popupAddButton = document.querySelector('.popup_type_add-button');
 const popupOpenImage = document.querySelector('.popup_type_image');
 const popupContainerImage = popupOpenImage.querySelector('.popup__container_image');
-const popupForm = popupContainerImage.querySelector('.popup__form');
+const popupForm = popupContainerImage.querySelector('.popup__content');
 const popupImage = popupForm.querySelector('.popup__image');
 const popupText = popupForm.querySelector('.popup__text');
 const popupCloseEditButton = document.querySelector('.popup__close_type_edit-button');
@@ -67,6 +68,7 @@ profileAddButton.addEventListener('click', function() {
   openPopup(popupAddButton)
 })
 
+
 //закрытие
 function closePopup(pop) {
   pop.classList.remove(profilePopupOpened)
@@ -81,7 +83,8 @@ popupCloseAddButton.addEventListener('click', function() {
 })
 
 popupCloseImage.addEventListener('click', function() {
-  closePopup(popupOpenImage)
+  popupOpenImage.classList.remove(profilePopupOpened)
+  popupOpenImage.classList.remove(popupOpenImageWindow)
 })
 
 function submitForm(e) {
@@ -111,7 +114,8 @@ function createCard(inputName, inputLink) {
   })
 
   elementImage.addEventListener('click', function() {
-    openPopup(popupOpenImage);
+    popupOpenImage.classList.add(profilePopupOpened)
+    popupOpenImage.classList.add(popupOpenImageWindow)
     popupImage.src = inputLink;
     popupImage.alt = inputName;
     popupText.textContent = inputName;

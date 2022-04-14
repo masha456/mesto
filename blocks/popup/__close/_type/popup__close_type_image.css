@@ -1,0 +1,15 @@
+.popup__close_type_image {
+    position: relative;
+    top: -7px;
+    margin: auto;
+    margin-right: 0;
+    right: 0;
+    display: flex;
+    left: 39px;
+}
+
+@media screen and (max-width: 550px) {
+    .popup__close_type_image {
+      left: 23px;
+  }
+}
