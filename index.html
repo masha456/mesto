@@ -7,77 +7,79 @@
   <title>Mesto</title>
 </head>
 <body class="root">
-    <div class="page">
+  <div class="page">
     
-      <header class="header">
-        <img class="header__logo" src="./images/logo.svg" alt="Лого место">
-      </header>
+    <header class="header">
+      <img class="header__logo" src="./images/logo.svg" alt="Лого место">
+    </header>
   
-        <main class="content">
-           <section class="profile">
-               <img class="profile__image" src="./images/profile-image.jpg" alt="Аватарка">
-               <div class="profile__block">
-               <div class="profile__description">
-                 <h1 class="profile__name">Жак-Ив Кусто</h1>
-                 <button type="button" class="profile__edit-button" aria-label="Изменить"></button>
-               </div>
-               <p class="profile__subtitle">Исследователь океана</p>
-              </div>
-               <button type="button" class="profile__add-button" aria-label="Добавить"></button>
-           </section>
+    <main class="content">
+      <section class="profile">
+        <img class="profile__image" src="./images/profile-image.jpg" alt="Аватарка">
+          <div class="profile__block">
+            <div class="profile__description">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button type="button" class="profile__edit-button" aria-label="Изменить"></button>
+            </div>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
+            <button type="button" class="profile__add-button" aria-label="Добавить"></button>
+      </section>
 
-           <section class="elements">
-           </section>
-        </main>
+      <section class="elements"></section>
 
-           <section class="footer">
-              <p class="footer__copyright">© 2022 Mesto Russia</p>
-           </section>
+    </main>
+
+      <section class="footer">
+        <p class="footer__copyright">© 2022 Mesto Russia</p>
+      </section>
+
     </div>
 
-           <div class="popup popup_type_edit-button">
-               <div class="popup__container">
-                   <button class="popup__close popup__close_type_edit-button" type="button"></button>
-                   <form class="popup__form popup__form_type_edit-button" name="form-popup">
-                     <h3 class="popup__title">Редактировать профиль</h3>
-                     <input name="name" class="popup__input popup__input_type_name" required minlength="2" maxlength="30" placeholder="Введите имя">
-                     <input name="job" class="popup__input popup__input_type_job" required minlength="2" maxlength="200" placeholder="О себе">
-                     <button class="popup__save" type="submit" aria-label="Сохранить">Сохранить</button>
-                  </form>  
-               </div>
-           </div>
+    <div class="popup popup_type_edit-button">
+      <div class="popup__container">
+        <button class="popup__close popup__close_type_edit-button" type="button"></button>
+        <form class="popup__form popup__form_type_edit-button" name="form-popup">
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <input name="name" class="popup__input popup__input_type_name" required minlength="2" maxlength="30" placeholder="Введите имя">
+          <input name="job" class="popup__input popup__input_type_job" required minlength="2" maxlength="200" placeholder="О себе">
+          <button class="popup__save" type="submit" aria-label="Сохранить">Сохранить</button>
+        </form>  
+      </div>
+    </div>
 
-           <div class="popup popup_type_add-button">
-            <div class="popup__container">
-              <button class="popup__close popup__close_type_add-button" type="button"></button>
-                <form class="popup__form popup__form_type_add-button" name="form-popup">
-                  <h3 class="popup__title">Новое место</h3>
-                  <input name="name" class="popup__input popup__input_type_card-name" required minlength="2" maxlength="30" placeholder="Название">
-                  <input name="link" class="popup__input popup__input_type_link" required minlength="2" maxlength="200" placeholder="Ссылка на картинку">
-                  <button class="popup__save" type="submit" aria-label="Создать">Создать</button>
-               </form>  
-            </div>
-           </div>
+    <div class="popup popup_type_add-button">
+      <div class="popup__container">
+        <button class="popup__close popup__close_type_add-button" type="button"></button>
+        <form class="popup__form popup__form_type_add-button" name="form-popup">
+          <h3 class="popup__title">Новое место</h3>
+          <input name="name" class="popup__input popup__input_type_card-name" required minlength="2" maxlength="30" placeholder="Название">
+          <input name="link" class="popup__input popup__input_type_link" required minlength="2" maxlength="200" placeholder="Ссылка на картинку">
+          <button class="popup__save" type="submit" aria-label="Создать">Создать</button>
+        </form>  
+      </div>
+    </div>
 
-           <div class="popup popup_type_image">
-             <div class="popup__container popup__container_image">
-              <button class="popup__close popup__close_type_image"></button>
-               <figure class="popup__content">
-                 <img class="popup__image" alt ="картинка">
-                 <figcaption class="popup__text"></figcaption>
-               </figure>
-             </div>
-           </div>
+    <div class="popup popup_type_image">
+      <div class="popup__container popup__container_image">
+      <button class="popup__close popup__close_type_image"></button>
+        <figure class="popup__content">
+          <img class="popup__image" alt ="картинка">
+          <figcaption class="popup__text"></figcaption>
+        </figure>
+      </div>
+    </div>
 
-           <template id="element">
-             <div class="element__info">
-               <img class="element__image" alt="картинка">
-               <h2 class="element__title"></h2>
-               <button type="button" class="element__button" aria-label="Понравилось"></button>
-               <button type="button" class="element__button-trash" aria-label="Удалить"></button>
-              </div>
-           </template>
+    <template id="element" class="element">
+      <div class="element__info">
+        <img class="element__image" alt="картинка">
+        <h2 class="element__title"></h2>
+        <button type="button" class="element__button" aria-label="Понравилось"></button>
+        <button type="button" class="element__button-trash" aria-label="Удалить"></button>
+      </div>
+     </template>
     
     <script src="scripts/index.js"></script>
+
 </body>
 </html>

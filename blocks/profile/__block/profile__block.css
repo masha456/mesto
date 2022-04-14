@@ -1,10 +1,10 @@
 .profile__block {
-   flex: auto;
-   margin-left: 30px;
+  flex: auto;
+  margin-left: 30px;
 }
 
 @media screen and (max-width: 450px) {
-   .profile__block {
-     margin-left: 25px;
-   }
- }
+  .profile__block {
+    margin-left: 25px;
+  }
+}

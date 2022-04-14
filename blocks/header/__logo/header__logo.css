@@ -5,9 +5,9 @@
 
 @media screen and (max-width: 950px) {
   .header__logo {
-      margin-left: 27px;
-    }
+    margin-left: 27px;
   }
+}
 
 @media screen and (max-width: 450px) {
   .header__logo {
