@@ -1,11 +1,11 @@
-const profilePopupOpened = 'popup_is-active';
-const popupOpenImageWindow = 'popup_is-open-image';
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileAddButton = document.querySelector('.profile__add-button');
 const profileName = document.querySelector('.profile__name');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 
-const elements = document.querySelector('.elements');
+const cardsContainer = document.querySelector('.elements');
+
+const elementTemplate = document.querySelector('#element');
 
 const popupEditButton = document.querySelector('.popup_type_edit-button');
 const popupAddButton = document.querySelector('.popup_type_add-button');
@@ -17,67 +17,29 @@ const popupText = popupForm.querySelector('.popup__text');
 const popupCloseEditButton = document.querySelector('.popup__close_type_edit-button');
 const popupCloseAddButton = document.querySelector('.popup__close_type_add-button');
 const popupCloseImage = document.querySelector('.popup__close_type_image');
-const popupFormEditButton = popupEditButton.querySelector('.popup__form_type_edit-button');
-const popupFormAddButton = popupAddButton.querySelector('.popup__form_type_add-button');
-const popupCardName = popupFormAddButton.querySelector('.popup__input_type_card-name');
-const popupLink = popupFormAddButton.querySelector('.popup__input_type_link');
-const popupName = popupFormEditButton.querySelector('.popup__input_type_name');
-const popupJob = popupFormEditButton.querySelector('.popup__input_type_job');
+const popupFormProfileEdit = popupEditButton.querySelector('.popup__form_type_edit-button');
+const popupFormAddCard = popupAddButton.querySelector('.popup__form_type_add-button');
+const popupCardName = popupFormAddCard.querySelector('.popup__input_type_card-name');
+const popupLink = popupFormAddCard.querySelector('.popup__input_type_link');
+const popupName = popupFormProfileEdit.querySelector('.popup__input_type_name');
+const popupJob = popupFormProfileEdit.querySelector('.popup__input_type_job');
 
 
-
-const initialCards = [
-    {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-  ];
-
-//открытие
 function openPopup(popup) {
-  popup.classList.add(profilePopupOpened)
+  popup.classList.add('popup_is-active')
 }
 
-function openPopupImage(popup) {
-  openPopup(popupOpenImage)
-  popup.classList.add(popupOpenImageWindow)
+function closePopup(popup) {
+  popup.classList.remove('popup_is-active')
 }
 
 profileEditButton.addEventListener('click', function() {
-  popupName.value = profileName.textContent;
-  popupJob.value = profileSubtitle.textContent;
   openPopup(popupEditButton)
 })
 
 profileAddButton.addEventListener('click', function() {
   openPopup(popupAddButton)
 })
-
-
-//закрытие
-function closePopup(popup) {
-  popup.classList.remove(profilePopupOpened)
-}
 
 popupCloseEditButton.addEventListener('click', function() {
   closePopup(popupEditButton)
@@ -88,22 +50,24 @@ popupCloseAddButton.addEventListener('click', function() {
 })
 
 popupCloseImage.addEventListener('click', function() {
-  popupOpenImage.classList.remove(profilePopupOpened)
-  popupOpenImage.classList.remove(popupOpenImageWindow)
+  closePopup(popupOpenImage)
 })
 
-function submitForm(e) {
+function enterDataIntoFormSubmit() {
+  popupName.value = profileName.textContent;
+  popupJob.value = profileSubtitle.textContent;
+}
+
+function handleProfileFormSubmit(e) {
   e.preventDefault();
   profileName.textContent = popupName.value;
   profileSubtitle.textContent = popupJob.value;
   closePopup(popupEditButton)
 }
 
-popupFormEditButton.addEventListener('submit', submitForm);
-
 function createCard(inputName, inputLink) {
-  const elementTemplate = document.querySelector('#element').content;
-  const elementInfo = elementTemplate.querySelector('.element__info').cloneNode(true);
+  const elementTemplateContent = elementTemplate.content;
+  const elementInfo = elementTemplateContent.querySelector('.element__info').cloneNode(true);
   const elementImage = elementInfo.querySelector('.element__image');
 
   elementInfo.querySelector('.element__title').textContent = inputName;
@@ -119,7 +83,7 @@ function createCard(inputName, inputLink) {
   })
 
   elementImage.addEventListener('click', function() {
-    openPopupImage(popupOpenImage)
+    openPopup(popupOpenImage)
     popupImage.src = inputLink;
     popupImage.alt = inputName;
     popupText.textContent = inputName;
@@ -130,7 +94,7 @@ function createCard(inputName, inputLink) {
 
 function createItem(inputName, inputLink) {
   const cardItem = createCard(inputName, inputLink)
-  elements.prepend(cardItem);
+  cardsContainer.prepend(cardItem);
 }
 
 function addItem(evt) {
@@ -139,11 +103,19 @@ function addItem(evt) {
   const inputLink = popupLink.value;
   createItem(inputName, inputLink);
   closePopup(popupAddButton)
-  popupFormAddButton.reset()
+  popupFormAddCard.reset()
 }
 
-initialCards.forEach(function(item) {
-  createItem(item.name, item.link);
-})
+function arrayCards(array) {
+  array.forEach(function(item) {
+    createItem(item.name, item.link);
+  })
+}
 
-popupFormAddButton.addEventListener('submit', addItem);
+arrayCards(initialCards)
+enterDataIntoFormSubmit(profileEditButton)
+//слушатели
+profileEditButton.addEventListener('click',enterDataIntoFormSubmit)
+popupFormProfileEdit.addEventListener('submit', handleProfileFormSubmit);
+popupFormAddCard.addEventListener('submit', addItem);
+
