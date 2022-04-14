@@ -29,13 +29,17 @@ function openPopup(popup) {
   popup.classList.add('popup_is-active')
 }
 
+function openPopupProfile(popup) {
+  popupName.value = profileName.textContent;
+  popupJob.value = profileSubtitle.textContent;
+  openPopup(popupEditButton);
+}
+
 function closePopup(popup) {
   popup.classList.remove('popup_is-active')
 }
 
-profileEditButton.addEventListener('click', function() {
-  openPopup(popupEditButton)
-})
+profileEditButton.addEventListener('click', openPopupProfile);
 
 profileAddButton.addEventListener('click', function() {
   openPopup(popupAddButton)
@@ -52,11 +56,6 @@ popupCloseAddButton.addEventListener('click', function() {
 popupCloseImage.addEventListener('click', function() {
   closePopup(popupOpenImage)
 })
-
-function enterDataIntoFormSubmit() {
-  popupName.value = profileName.textContent;
-  popupJob.value = profileSubtitle.textContent;
-}
 
 function handleProfileFormSubmit(e) {
   e.preventDefault();
@@ -106,16 +105,14 @@ function addItem(evt) {
   popupFormAddCard.reset()
 }
 
-function arrayCards(array) {
+function renderCards(array) {
   array.forEach(function(item) {
     createItem(item.name, item.link);
   })
 }
 
-arrayCards(initialCards)
-enterDataIntoFormSubmit(profileEditButton)
+renderCards(initialCards)
 //слушатели
-profileEditButton.addEventListener('click',enterDataIntoFormSubmit)
 popupFormProfileEdit.addEventListener('submit', handleProfileFormSubmit);
 popupFormAddCard.addEventListener('submit', addItem);
 
