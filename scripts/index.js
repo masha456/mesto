@@ -7,13 +7,15 @@ const cardsContainer = document.querySelector('.elements');
 
 const elementTemplate = document.querySelector('#element');
 
+const ESC_KEY = "Escape";
+
 const popupEditButton = document.querySelector('.popup_type_edit-button');
 const popupAddButton = document.querySelector('.popup_type_add-button');
 const popupOpenImage = document.querySelector('.popup_type_image');
 const popupContainerImage = popupOpenImage.querySelector('.popup__container_image');
-const popupForm = popupContainerImage.querySelector('.popup__content');
-const popupImage = popupForm.querySelector('.popup__image');
-const popupText = popupForm.querySelector('.popup__text');
+const popupContent = popupContainerImage.querySelector('.popup__content');
+const popupImage = popupContent.querySelector('.popup__image');
+const popupText = popupContent.querySelector('.popup__text');
 const popupCloseEditButton = document.querySelector('.popup__close_type_edit-button');
 const popupCloseAddButton = document.querySelector('.popup__close_type_add-button');
 const popupCloseImage = document.querySelector('.popup__close_type_image');
@@ -23,15 +25,35 @@ const popupCardName = popupFormAddCard.querySelector('.popup__input_type_card-na
 const popupLink = popupFormAddCard.querySelector('.popup__input_type_link');
 const popupName = popupFormProfileEdit.querySelector('.popup__input_type_name');
 const popupJob = popupFormProfileEdit.querySelector('.popup__input_type_job');
+const buttonSumbitAdd = document.querySelector('.popup__save_add');
+const buttonSubmitEdit = document.querySelector('.popup__save_edit');
+const overlayImage = document.querySelector('.popup__container_overlay-image');
+const overlayAdd = document.querySelector('.popup__container_overlay-add');
+const overlayEdit = document.querySelector('.popup__container_overlay-edit');
+const popupFormAdd =  popupAddButton.querySelector('.popup__form');
+
 
 
 function openPopup(popup) {
-  popup.classList.add('popup_is-active')
+  popup.classList.add('popup_is-active');
+  document.addEventListener("keyup", documentKeyup)
 }
 
 function closePopup(popup) {
-  popup.classList.remove('popup_is-active')
+  popup.classList.remove('popup_is-active');
+  document.removeEventListener("keyup", documentKeyup);
 }
+
+function documentKeyup(event) {
+  if (event.key === ESC_KEY) {
+    const popupOpened = document.querySelector('.popup_is-active');
+    closePopup(popupOpened);
+  }
+}
+
+profileEditButton.addEventListener('click', function() {
+  
+})
 
 profileEditButton.addEventListener('click', function() {
   openPopup(popupEditButton)
@@ -111,6 +133,8 @@ function arrayCards(array) {
     createItem(item.name, item.link);
   })
 }
+
+
 
 arrayCards(initialCards)
 enterDataIntoFormSubmit(profileEditButton)

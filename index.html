@@ -37,31 +37,35 @@
     </div>
 
     <div class="popup popup_type_edit-button">
-      <div class="popup__container">
+      <div class="popup__container popup__container_overlay-edit">
         <button class="popup__close popup__close_type_edit-button" type="button"></button>
-        <form class="popup__form popup__form_type_edit-button" name="form-popup">
+        <form class="popup__form popup__form_type_edit-button" name="form-popup" novalidate>
           <h3 class="popup__title">Редактировать профиль</h3>
-          <input name="name" class="popup__input popup__input_type_name" required minlength="2" maxlength="30" placeholder="Введите имя">
-          <input name="job" class="popup__input popup__input_type_job" required minlength="2" maxlength="200" placeholder="О себе">
-          <button class="popup__save" type="submit" aria-label="Сохранить">Сохранить</button>
+          <input id="name-input" name="name" class="popup__input popup__input_type_name" required minlength="2" maxlength="40" placeholder="Введите имя">
+          <span id="name-error" class="name-input-error popup__input-error">Вы пропустили это поле.</span>
+          <input id="job-input" name="job" class="popup__input popup__input_type_job" required minlength="2" maxlength="200" placeholder="О себе">
+          <span id="job-error" class="job-input-error popup__input-error">Вы пропустили это поле.</span>
+          <button class="popup__save popup__save_edit" type="submit" aria-label="Сохранить">Сохранить</button>
         </form>  
       </div>
     </div>
 
     <div class="popup popup_type_add-button">
-      <div class="popup__container">
+      <div class="popup__container popup__container_overlay-add">
         <button class="popup__close popup__close_type_add-button" type="button"></button>
         <form class="popup__form popup__form_type_add-button" name="form-popup">
           <h3 class="popup__title">Новое место</h3>
-          <input name="name" class="popup__input popup__input_type_card-name" required minlength="2" maxlength="30" placeholder="Название">
-          <input name="link" class="popup__input popup__input_type_link" required minlength="2" maxlength="200" placeholder="Ссылка на картинку">
-          <button class="popup__save" type="submit" aria-label="Создать">Создать</button>
+          <input id="place-input" name="name" class="popup__input popup__input_type_card-name" required minlength="2" maxlength="30" placeholder="Название">
+          <span id="place-error" class="name-input-error popup__input-error">Вы пропустили это поле.</span>
+          <input id="link-input"name="link" class="popup__input popup__input_type_link" required type="url" placeholder="Ссылка на картинку">
+          <span id="link-error" class="name-input-error popup__input-error">Введите адрес сайта.</span>
+          <button class="popup__save popup__save_add" type="submit" aria-label="Создать">Создать</button>
         </form>  
       </div>
     </div>
 
     <div class="popup popup_type_image">
-      <div class="popup__container popup__container_image">
+      <div class="popup__container popup__container_image popup__container_overlay-image">
       <button class="popup__close popup__close_type_image"></button>
         <figure class="popup__content">
           <img class="popup__image" alt ="картинка">
@@ -78,7 +82,8 @@
         <button type="button" class="element__button-trash" aria-label="Удалить"></button>
       </div>
      </template>
-     
+
+    <script src="scripts/validate.js"></script>
     <script src="scripts/cards.js"></script>
     <script src="scripts/index.js"></script>
 
